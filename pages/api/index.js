@@ -1,9 +1,12 @@
 const faunadb = require('faunadb')
+require('dotenv').config()
 
 // your secret hash
 const secret = process.env.FAUNADB_SECRET_KEY
 const q = faunadb.query
 const client = new faunadb.Client({ secret })
+
+console.log(secret)
 
 module.exports = async (req, res) => {
   try {
